@@ -1,26 +1,74 @@
-import connectDb from "@/app/lib/db";
-import User from "@/app/models/user.model";
-import { auth } from "@/auth";
-import { NextRequest, NextResponse } from "next/server";
+import { auth } from '@/auth'
+import AdminDashboard from '@/components/AdminDashboard'
+import DeliveryBoy from '@/components/DeliveryBoy'
+import EditRoleMobile from '@/components/EditRoleMobile'
+import Footer from '@/components/Footer'
+import GeoUpdater from '@/components/GeoUpdater'
 
-export async function POST(req:NextRequest){
-  try {
-    await connectDb()
-    const {role,mobile} = await req.json()
-    const session = await auth()
-    const user=await User.findOneAndUpdate({email:session?.user?.email},{role,mobile})
-    if(!user){
-      return NextResponse.json(
-        {message: "User not found"},{status: 404}
-      )
-    }
-    return NextResponse.json(
-      {message: "User role and mobile updated successfully"},{status: 200}
-    )
-  } catch (error) {
-    console.log("Error updating user role and mobile:", error);
-    return NextResponse.json({
-      message: "Failed to update user role and mobile"},{status: 500
+import Nav from '@/components/Nav'
+import UserDashboard from '@/components/UserDashboard'
+import connectDb from '@/app/lib/db'
+import Grocery, { IGrocery } from '@/app/models/grocery.model'
+
+import User from '@/app/models/user.model'
+
+import { redirect } from 'next/navigation'
+
+
+
+async function Home(props:{
+  searchParams:Promise<{
+    q:string
+  }>
+}) {
+
+const searchParams=await props.searchParams
+
+  await connectDb()
+  const session = await auth()
+  if (!session) redirect("/login")
+  console.log(session?.user)
+  const user = await User.findById(session?.user?.id)
+ if (!user) redirect("/login")
+
+  const inComplete = !user.mobile || !user.role || (!user.mobile && user.role == "user")
+  if (inComplete) {
+    return <EditRoleMobile />
+  }
+
+  const plainUser = JSON.parse(JSON.stringify(user))
+
+let groceryList:IGrocery[]=[]
+
+if(user.role==="user"){
+  if(searchParams.q){
+    groceryList=await Grocery.find({
+     $or:[
+      { name: { $regex: searchParams?.q || "", $options: "i" } },
+    { category: { $regex: searchParams?.q || "", $options: "i" } },
+     ]
     })
+  }else{
+    groceryList=await Grocery.find({})
+     
+
   }
 }
+
+
+
+  return (
+    <>
+      <Nav user={plainUser} />
+      <GeoUpdater userId={plainUser._id}/>
+      {user.role == "user" ? (
+        <UserDashboard groceryList={groceryList}/>
+      ) : user.role == "admin" ? (
+        <AdminDashboard />
+      ) : <DeliveryBoy />}
+      <Footer/>
+    </>
+  )
+}
+
+export default Home
