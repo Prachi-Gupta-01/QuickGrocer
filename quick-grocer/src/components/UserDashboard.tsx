@@ -2,7 +2,7 @@ import React from 'react'
 import HeroSection from './HeroSection'
 import CategorySlider from './CategorySlider'
 import connectDb from '@/app/lib/db'
-import Grocery, { IGrocery } from '@/app/models/grocery.model'
+import Grocery, { IGrocery } from '@/models/grocery.model'
 import GroceryItemCard from './GroceryItemCard'
 
 async function UserDashboard({groceryList}:{groceryList:IGrocery[]}) {
