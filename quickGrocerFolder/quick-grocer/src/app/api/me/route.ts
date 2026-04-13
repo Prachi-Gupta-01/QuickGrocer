@@ -1,4 +1,4 @@
-import User  from '@/app/models/user.model';
+import User  from '@/models/user.model';
 import { auth } from "@/auth";
 import { NextRequest, NextResponse } from "next/server";
 

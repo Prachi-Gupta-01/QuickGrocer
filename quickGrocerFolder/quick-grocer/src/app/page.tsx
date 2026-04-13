@@ -7,10 +7,10 @@ import GeoUpdater from '@/components/GeoUpdater'
 
 import Nav from '@/components/Nav'
 import UserDashboard from '@/components/UserDashboard'
-import connectDb from '@/app/lib/db'
-import Grocery, { IGrocery } from '@/app/models/grocery.model'
+import connectDb from '@/lib/db'
+import Grocery, { IGrocery } from '@/models/grocery.model'
 
-import User from '@/app/models/user.model'
+import User from '@/models/user.model'
 
 import { redirect } from 'next/navigation'
 

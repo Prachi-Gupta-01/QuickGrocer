@@ -1,8 +1,8 @@
 import React from 'react'
 import DeliveryBoyDashboard from './DeliveryBoyDashboard'
 import { auth } from '@/auth'
-import connectDb from '@/app/lib/db'
-import Order from '@/app/models/order.model'
+import connectDb from '@/lib/db'
+import Order from '@/models/order.model'
 
 async function DeliveryBoy() {
   await connectDb()

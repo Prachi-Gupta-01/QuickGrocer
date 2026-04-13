@@ -1,5 +1,5 @@
-import connectDb from "@/app/lib/db"
-import Order from "@/app/models/order.model"
+import connectDb from "@/lib/db"
+import Order from "@/models/order.model"
 import { NextRequest, NextResponse } from "next/server"
 
 export async function GET(req:NextRequest,context: { params: Promise<{ orderId: string; }>; }) {

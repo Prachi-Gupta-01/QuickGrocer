@@ -1,7 +1,7 @@
 import { auth } from "@/auth";
 
-import connectDb from "@/app/lib/db";
-import Grocery from "@/app/models/grocery.model";
+import connectDb from "@/lib/db";
+import Grocery from "@/models/grocery.model";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req:NextRequest) {

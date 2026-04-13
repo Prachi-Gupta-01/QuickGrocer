@@ -1,7 +1,7 @@
-import connectDb from "@/app/lib/db";
-import emitEventHandler from "@/app/lib/emitEventHandler";
-import DeliveryAssignment from "@/app/models/deliveryAssignment.model";
-import Order from "@/app/models/order.model";
+import connectDb from "@/lib/db";
+import emitEventHandler from "@/lib/emitEventHandler";
+import DeliveryAssignment from "@/models/deliveryAssignment.model";
+import Order from "@/models/order.model";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req:NextRequest) {

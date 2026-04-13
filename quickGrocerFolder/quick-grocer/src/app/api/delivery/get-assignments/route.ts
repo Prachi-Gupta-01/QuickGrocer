@@ -1,6 +1,6 @@
 import { auth } from "@/auth";
-import connectDb from "@/app/lib/db";
-import DeliveryAssignment from "@/app/models/deliveryAssignment.model";
+import connectDb from "@/lib/db";
+import DeliveryAssignment from "@/models/deliveryAssignment.model";
 import { NextResponse } from "next/server";
 
 export async function GET() {

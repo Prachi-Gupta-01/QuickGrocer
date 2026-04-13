@@ -1,7 +1,7 @@
-import connectDb from "@/app/lib/db";
+import connectDb from "@/lib/db";
 
-import Message from "@/app/models/message.model";
-import Order from "@/app/models/order.model";
+import Message from "@/models/message.model";
+import Order from "@/models/order.model";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req:NextRequest) {

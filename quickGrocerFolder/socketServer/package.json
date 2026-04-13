@@ -1,16 +1,21 @@
 {
   "name": "socketserver",
   "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "dev": "nodemon index.js"
-  },
+  "description": "",
+  "license": "ISC",
   "author": "",
   "type": "module",
-  "license": "ISC",
-  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
   "dependencies": {
-    "dotenv": "^17.2.3",
-    "express": "^5.2.1"
+    "axios": "^1.15.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14",
+    "socket.io": "^4.8.3",
+    "socket.io-client": "^4.8.3"
   }
 }

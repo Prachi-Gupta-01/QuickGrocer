@@ -6,9 +6,9 @@ import { useRouter } from 'next/navigation'
 import {motion} from "motion/react"
 import React, { useEffect, useState } from 'react'
 import UserOrderCard from '@/components/UserOrderCard'
-import { getSocket } from '@/app/lib/socket'
+import { getSocket } from '@/lib/socket'
 
-import { IUser } from '@/app/models/user.model'
+import { IUser } from '@/models/user.model'
 interface IOrder {
     _id?: string
     user: string

@@ -1,4 +1,4 @@
-import connectDb from "@/app/lib/db";
+import connectDb from "@/lib/db";
 import { connect } from "http2";
 import { NextRequest, NextResponse } from "next/server";
 

@@ -1,8 +1,8 @@
 'use client'
 import AdminOrderCard from '@/components/AdminOrderCard'
-import { getSocket } from '@/app/lib/socket'
+import { getSocket } from '@/lib/socket'
 
-import { IUser } from '@/app/models/user.model'
+import { IUser } from '@/models/user.model'
 import axios from 'axios'
 import { ArrowLeft } from 'lucide-react'
 

@@ -5,9 +5,9 @@ import { motion } from "motion/react"
 import { ChevronDown, ChevronUp, CreditCard, MapPin, Package, Truck, UserCheck } from 'lucide-react'
 import { div } from 'motion/react-client'
 import Image from 'next/image'
-import { getSocket } from '@/app/lib/socket'
+import { getSocket } from '@/lib/socket'
 import mongoose from 'mongoose'
-import { IUser } from '@/app/models/user.model'
+import { IUser } from '@/models/user.model'
 import { useRouter } from 'next/navigation'
 interface IOrder {
     _id?: string

@@ -1,9 +1,9 @@
 import React from 'react'
 import AdminDashboardClient from './AdminDashboardClient'
-import connectDb from '@/app/lib/db'
-import Order from '@/app/models/order.model'
-import User from '@/app/models/user.model'
-import Grocery from '@/app/models/grocery.model'
+import connectDb from '@/lib/db'
+import Order from '@/models/order.model'
+import User from '@/models/user.model'
+import Grocery from '@/models/grocery.model'
 
 async function AdminDashboard() {
   await connectDb()
