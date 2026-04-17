@@ -2,7 +2,7 @@
 import { ArrowLeft, Loader, Plus, PlusCircle, Upload } from 'lucide-react'
 import Link from 'next/link'
 import React, { ChangeEvent, FormEvent, useState } from 'react'
-import { motion } from "motion/react"
+import { motion } from "framer-motion"
 import Image from 'next/image'
 import axios from 'axios'
 const categories = [

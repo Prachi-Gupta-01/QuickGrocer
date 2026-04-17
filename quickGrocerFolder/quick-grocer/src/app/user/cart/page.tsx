@@ -2,10 +2,10 @@
 import { ArrowLeft, Minus, Plus, ShoppingBasket, Trash, Trash2 } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
-import {AnimatePresence, motion} from "motion/react"
+import {AnimatePresence, motion} from "framer-motion"
 import { useSelector } from 'react-redux'
 import { AppDispatch, RootState } from '@/redux/store'
-import { div } from 'motion/react-client'
+//import { div } from 'motion/react-client'
 import Image from 'next/image'
 import { useDispatch } from 'react-redux'
 import { decreaseQuantity, increaseQuantity, removeFromCart } from '@/redux/cartSlice'

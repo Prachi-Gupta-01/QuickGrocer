@@ -1,7 +1,7 @@
 'use client'
 import { Apple, Baby, Box, ChevronLeft, ChevronRight, Coffee, Cookie, Flame, Heart, Home, Milk, Wheat } from 'lucide-react'
 import React, { useEffect, useRef, useState } from 'react'
-import {motion} from "motion/react"
+import {motion} from "framer-motion"
 function CategorySlider() {
     const categories=[
   { id: 1, name: "Fruits & Vegetables", icon: Apple, color: "bg-green-100" },
@@ -73,7 +73,7 @@ setShowRight(scrollLeft+clientWidth<=scrollWidth-5)
     const Icon=cat.icon
     return <motion.div
     key={cat.id}
-    className={`min-w-37.5 md:min-w-45 flex flex-col items-center justify-center rounded-2xl ${cat.color} shadow-md hover:shadow-xl transition-all cursor-pointer`}
+    className={`min-w-[150px] md:min-w-[180px] flex flex-col items-center justify-center rounded-2xl ${cat.color} shadow-md hover:shadow-xl transition-all cursor-pointer`}
     >
    <div className='flex flex-col items-center justify-center p-5'>
       <Icon className='w-10 h-10 text-green-700 mb-3'/>

@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import { motion } from "motion/react"
+import { motion } from "framer-motion"
 import { ChevronDown, ChevronUp, CreditCard, MapPin, Package, Phone, Truck, User, UserCheck } from 'lucide-react'
 import Image from 'next/image'
 import axios from 'axios'

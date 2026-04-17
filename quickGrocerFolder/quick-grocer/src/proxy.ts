@@ -4,14 +4,17 @@ import { NextRequest, NextResponse } from "next/server";
 export async function proxy(req:NextRequest){
   const {pathname} = req.nextUrl;
 
-  const publicRoutes =["login","/register","/api/auth"]
+  const publicRoutes =["/login","/register","/api/auth"]
   if(publicRoutes.some((path) =>pathname.startsWith(path))){
     return NextResponse.next();
   }
   const token=await getToken({req,secret:process.env.AUTH_SECRET});
   if(!token){
     const loginUrl=new URL("/login",req.url);
-    loginUrl.searchParams.set("callbackUrl",req.url);
+    // Only set callbackUrl if not already on login page
+    if (!pathname.startsWith("/login")) {
+      loginUrl.searchParams.set("callbackUrl",req.url);
+    }
     return NextResponse.redirect(loginUrl);
   }
 

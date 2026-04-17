@@ -77,4 +77,3 @@ const sevenDaysRevenue=sevenDaysOrders.reduce((sum,o)=>sum+(o.totalAmount || 0),
 }
 
 export default AdminDashboard
-

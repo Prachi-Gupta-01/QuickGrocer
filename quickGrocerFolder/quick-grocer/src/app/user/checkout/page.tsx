@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import { motion } from "motion/react"
+import { motion } from "framer-motion"
 import { ArrowLeft, Building, CreditCard, CreditCardIcon, Home, Loader2, LocateFixed, MapPin, Navigation, Phone, Search, Truck, User } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { useSelector } from 'react-redux'
